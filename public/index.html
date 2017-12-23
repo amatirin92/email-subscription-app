@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subscription form</title>
+   <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+   <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <div class='main animated fadeIn'>
+ <div class='container'>
+  <a href="/subscribers">Subscriptions List</a>
+  
+   <h1>Subscribe to our Newsletter</h1>
+   <form action='/confirm' method='POST'>
+    <h2>Your name</h2>
+    <input type="text" name="name" required>
+    <h2>Your email</h2>
+    <input type="email" name="email" required>
+    
+    <h3>Do you agree to the terms and conditions? <input type="checkbox" required></h3>
+    
+    <button> Submit!</button>
+    </form>
+    </div>
+    </div>
+</body>
+</html>

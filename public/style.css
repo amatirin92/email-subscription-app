@@ -1,0 +1,16 @@
+.main {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+    
+}
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+body {
+    background-color: #1D96FF;
+}
