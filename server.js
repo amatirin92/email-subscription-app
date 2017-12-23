@@ -88,7 +88,7 @@ app.get('/confirm/:token', (req, res) => {
                     subscribed: true
                 }
             })
-            res.send("Thanks! You're all set!")
+            res.redirect('/confir')
         }
     })
 });
