@@ -58,7 +58,7 @@ app.post('/confirm', (req, res) => {
     var usertoken = user.token;
     console.log(user);
     var confirmUrl =
-        'http://email-subscription-app.herokuapp.com/confirm/' +
+        'http://the-email-subscription-app.herokuapp.com/confirm/' +
         usertoken;
     var data = {
         from: 'Admin <admin@amatirin.me>',
