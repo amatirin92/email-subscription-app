@@ -76,7 +76,6 @@ app.get('/confirm/:token', (req, res) => {
     db.collection('subscribers').find({
         token: req.params.token
     }, function (err, result) {
-        console.log(result)
         if (!result) {
             res.send("This is a bad token. Are you sure?")
         }
@@ -88,7 +87,7 @@ app.get('/confirm/:token', (req, res) => {
                     subscribed: true
                 }
             })
-            res.redirect('/confir')
+            res.redirect('/confirm')
         }
     })
 });
