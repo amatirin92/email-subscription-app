@@ -28,6 +28,7 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.json())
 app.use(express.static(path.join(
     __dirname, 'public')))
+
 //index route
 app.get('/', (req, res) => {
     res.sendFile(__dirname +
@@ -56,7 +57,6 @@ app.post('/confirm', (req, res) => {
     }
     user.token = token;
     var usertoken = user.token;
-    console.log(user);
     var confirmUrl =
         'http://the-email-subscription-app.herokuapp.com/confirm/' +
         usertoken;
