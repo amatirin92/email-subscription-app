@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow');
+
+body { 
+    font-family: 'Barlow', sans-serif;
+}
+
 .main {
     display: flex;
     justify-content: center;
     text-align: center;
-    font-family: 'Barlow', sans-serif;
     
 }
 input {
