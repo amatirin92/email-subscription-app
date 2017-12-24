@@ -117,8 +117,7 @@ app.get('/confirm/:token', (req, res) => {
             token: 1,
             _id: 0
         }, (err, result) => {
-            console.log(
-                result)
+            console.log(result)
             if (!result) {
                 res.render(
                     'confirm.ejs', {
