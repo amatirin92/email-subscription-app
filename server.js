@@ -43,7 +43,6 @@ app.post('/confirm', (req, res) => {
         for (var i = 16; i > 0; --i) {
             token += chars[Math.round(Math.random() * (chars.length - 1))];
         }
-        user.creationTime = new Date('Oct 30, 2013: 11:00:00');
         user.token = token;
         var usertoken = user.token;
   
@@ -58,8 +57,6 @@ app.post('/confirm', (req, res) => {
         mailgun.messages().send(data, function (error, body) {});
         //save user to database
     console.log(user);
-        //give database TTL
-        db.subscribers.ensureIndex( { "creationTime": 1 }, { expireAfterSeconds: 30 } )
         
         db.collection('subscribers').save(req.body, (err, result) => {
             if (err) return console.log(err)
