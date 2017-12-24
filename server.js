@@ -121,7 +121,8 @@ app.get('/confirm/:token', (req, res) => {
             if (!result) {
                 res.render(
                     'confirm.ejs', {
-                        response: "This is a bad token. Are you sure?"
+                        response: "This is a bad token. Please double check!",
+                        title: "Error"
                     })
             } else if (
                 result) {
@@ -138,7 +139,8 @@ app.get('/confirm/:token', (req, res) => {
                 })
                 res.render(
                     'confirm.ejs', {
-                        response: "You're all set!"
+                        response: "You're all set!",
+                        title: "Confirmation"
                     })
             }
         })
