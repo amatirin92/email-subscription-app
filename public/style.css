@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Barlow');
 
-body { 
+body {
     font-family: 'Barlow', sans-serif;
+    background-color: #1D96FF;
 }
 
 .main {
@@ -12,28 +13,25 @@ body {
     -ms-flex-pack: center;
     justify-content: center;
     text-align: center;
-    
 }
+
 input {
     background: transparent;
     border: none;
     border-bottom: 1px solid #000000;
 }
 
-body {
-    background-color: #1D96FF;
+table {
+    border-collapse: collapse;
+    width: 100%;
 }
- table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        
-        th,
-        td {
-            text-align: left;
-            padding: 8px;
-        }
-        
-        tr:nth-child(even) {
-            background-color: white;
-        }
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}

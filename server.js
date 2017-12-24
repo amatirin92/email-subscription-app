@@ -25,8 +25,6 @@ MongoClient.connect(
                 )
             })
     })
-
-
 app.use(bodyParser.urlencoded({
     extended: true
 }))
@@ -34,6 +32,7 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.json())
 app.use(express.static(path.join(
     __dirname, 'public')))
+
 //index route
 app.get('/', (req, res) => {
     res.sendFile(__dirname +
@@ -79,9 +78,9 @@ app.post('/confirm', (req, res) => {
         data,
         function(error,
             body) {});
+
     //save user to database
     console.log(user);
-
     db.collection('subscribers')
         .save(req.body, (err,
             result) => {
@@ -95,6 +94,7 @@ app.post('/confirm', (req, res) => {
                 })
         });
 })
+
 //subscribers route
 app.get('/subscribers', (req, res) => {
     db.collection('subscribers')
@@ -141,7 +141,6 @@ app.get('/confirm/:token', (req, res) => {
                     'confirm.ejs', {
                         response: "You're all set!"
                     })
-
             }
         })
 });
