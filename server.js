@@ -10,12 +10,15 @@ const mailgun = require('mailgun-js')({
 });
 const MongoClient = require('mongodb').MongoClient 
 var db;
-MongoClient.connect('mongodb://amatirin:ayami92@ds135946.mlab.com:35946/subscription-app', (err, database) => {
+MongoClient.connect('mongodb://localhost/subscribers', (err, database) => {
     if (err) return console.log(err)
     db = database;
     app.listen(process.env.PORT || 3000, () => {
+        console.log('App is listening' )
     })
 })
+
+
 app.use(bodyParser.urlencoded({
     extended: true
 }))
@@ -40,12 +43,12 @@ app.post('/confirm', (req, res) => {
         for (var i = 16; i > 0; --i) {
             token += chars[Math.round(Math.random() * (chars.length - 1))];
         }
-//        var expires = new Date();
+        user.creationTime = new Date('Oct 30, 2013: 11:00:00');
         user.token = token;
-//        user.expires = expires.setHours(expires.getHours() + 6);
         var usertoken = user.token;
-        console.log(user);
-        var confirmUrl = 'http://email-subscription-app.herokuapp.com/confirm/' + usertoken;
+  
+    //url
+        var confirmUrl = 'http://the-email-subscription-app.herokuapp.com/confirm/' + usertoken;
         //message
         var data = {
             from: 'Admin <admin@amatirin.me>', to: user.email,
@@ -54,12 +57,15 @@ app.post('/confirm', (req, res) => {
         };
         mailgun.messages().send(data, function (error, body) {});
         //save user to database
-        //       // give database TTL
-        //    db.collection('subscribers').createIndex({'expires': 1}, {expiresAfterSeconds: 21} )
-        //    
+    console.log(user);
+        //give database TTL
+        db.subscribers.ensureIndex( { "creationTime": 1 }, { expireAfterSeconds: 30 } )
+        
         db.collection('subscribers').save(req.body, (err, result) => {
             if (err) return console.log(err)
-            res.redirect('/confirm')
+            res.render('confirm.ejs', {
+                response: "Thanks! Please check your email!"
+            })
         });
     })
     //subscribers route
@@ -73,11 +79,14 @@ app.get('/subscribers', (req, res) => {
     })
     //verify routes
 app.get('/confirm/:token', (req, res) => {
-    db.collection('subscribers').find({
+    db.collection('subscribers').findOne({
         token: req.params.token
-    }, function (err, result) {
+    }, {token:1, _id:0}, (err, result) => {
+        console.log(result)
         if (!result) {
-            res.send("This is a bad token. Are you sure?")
+            res.render('confirm.ejs', {
+                response: "This is a bad token. Are you sure?"
+            })
         }
         else if (result) {
             db.collection('subscribers').update({
@@ -87,7 +96,10 @@ app.get('/confirm/:token', (req, res) => {
                     subscribed: true
                 }
             })
-            res.redirect('/confirm')
+            res.render('confirm.ejs', {
+                response: "You're all set!"
+            })
+            
         }
     })
 });
