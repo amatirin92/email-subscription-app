@@ -90,7 +90,8 @@ app.post('/confirm', (req, res) => {
                 )
             res.render(
                 'confirm.ejs', {
-                    response: "Thanks! Please check your email!"
+                    response: "Thanks! Please check your email!",
+                    title: "Confirmation"
                 })
         });
 })
@@ -103,7 +104,8 @@ app.get('/subscribers', (req, res) => {
             if (err) return err;
             res.render(
                 'list.ejs', {
-                    subscribers: result
+                    subscribers: result,
+                    title: "List"
                 })
         })
 })
@@ -121,7 +123,7 @@ app.get('/confirm/:token', (req, res) => {
             if (!result) {
                 res.render(
                     'confirm.ejs', {
-                        response: "This is a bad token. Please double check!"
+                        response: "This is a bad token. Are you sure?"
                     })
             } else if (
                 result) {
