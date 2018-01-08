@@ -2,10 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Email Subscription App | Home</title>
+    <meta charset="UTF-8" http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' data: fonts.gstatic.com">
+    
+    <title>Email Subscription App | Home </title>
+    <link rel="icon" type="image/png" href="icon.png">
     <link rel="stylesheet" href="animate.css">
-    <link rel="stylesheet" href="style.css"> </head>
+    <link rel="stylesheet" href="style.css"> 
+</head>
 
 <body>
     <div class='main animated fadeIn'>
@@ -13,11 +16,11 @@
             <h1>Subscribe to our Newsletter</h1>
             <form action='/confirm' method='POST'>
                 <h3>Your name</h3>
-                <input type="text" name="name" required>
+                <input type="text" name="name" >
                 <h3>Your email</h3>
-                <input type="email" name="email" required>
+                <input type="email" name="email" >
                 <h3>Do you agree to the terms and conditions? <input type="checkbox" required></h3>
-                <button> Submit!</button>
+                <button type="submit"> Submit!</button>
             </form>
         </div>
     </div>

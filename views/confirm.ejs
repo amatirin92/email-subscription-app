@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
 
+make into a partial?
+-->
 <head>
     <meta charset="UTF-8">
-    <title>Email Subscription App |
-        <%= title %>
-    </title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' data: fonts.gstatic.com">
+    
+    <title>Email Subscription App | <%= title %> </title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="animate.css">
     <link rel="stylesheet" href="/style.css"> 
 </head>
-
 <body>
-    <div class='main'>
+    <div class='main animated slideInLeft'>
         <div class='container'> <a href="/">Back Home</a>
-            <h1> <%= response %> </h1> 
+            <h1> <%= response %></h1>  
         </div>
     </div>
 </body>

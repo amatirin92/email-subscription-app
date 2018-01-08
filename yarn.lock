@@ -143,6 +143,13 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+better-validator@^2.1.7:
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/better-validator/-/better-validator-2.1.7.tgz#011a55b1656d4023211493ababaf330e65b65d18"
+  dependencies:
+    underscore "^1.8.3"
+    validator "^6.0.0"
+
 binary-extensions@^1.0.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.11.0.tgz#46aa1751fb6a2f93ee5e689bb1087d4b14c6c205"
@@ -426,6 +433,10 @@ ejs@^2.5.7:
 encodeurl@~1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/encodeurl/-/encodeurl-1.0.1.tgz#79e3d58655346909fe6f0f45a5de68103b294d20"
+
+es6-error@^4.0.2:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/es6-error/-/es6-error-4.1.1.tgz#9e3af407459deed47e9a91f9b885a84eb05c561d"
 
 es6-promise@3.2.1:
   version "3.2.1"
@@ -1170,6 +1181,10 @@ minimist@^1.2.0:
   dependencies:
     minimist "0.0.8"
 
+moment@^2.10.6:
+  version "2.20.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.20.1.tgz#d6eb1a46cbcc14a2b2f9434112c1ff8907f313fd"
+
 mongodb-core@2.1.17:
   version "2.1.17"
   resolved "https://registry.yarnpkg.com/mongodb-core/-/mongodb-core-2.1.17.tgz#a418b337a14a14990fb510b923dee6a813173df8"
@@ -1255,6 +1270,13 @@ node-pre-gyp@^0.6.39:
     semver "^5.3.0"
     tar "^2.2.1"
     tar-pack "^3.4.0"
+
+node-validator@^0.1.27:
+  version "0.1.27"
+  resolved "https://registry.yarnpkg.com/node-validator/-/node-validator-0.1.27.tgz#036cbe34658f8e1839991049060905121038f85d"
+  dependencies:
+    es6-error "^4.0.2"
+    moment "^2.10.6"
 
 nodemon@^1.12.7:
   version "1.14.3"
@@ -1959,6 +1981,10 @@ undefsafe@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/undefsafe/-/undefsafe-0.0.3.tgz#ecca3a03e56b9af17385baac812ac83b994a962f"
 
+underscore@^1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.8.3.tgz#4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022"
+
 unique-string@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/unique-string/-/unique-string-1.0.0.tgz#9e1057cca851abb93398f8b33ae187b99caec11a"
@@ -2004,6 +2030,10 @@ utils-merge@1.0.1:
 uuid@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.1.0.tgz#3dd3d3e790abc24d7b0d3a034ffababe28ebbc04"
+
+validator@^6.0.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/validator/-/validator-6.3.0.tgz#47ce23ed8d4eaddfa9d4b8ef0071b6cf1078d7c8"
 
 vary@~1.1.2:
   version "1.1.2"
