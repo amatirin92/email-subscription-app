@@ -37,7 +37,7 @@ app.get('/confirm', (req, res) => {
 
     app.post('/confirm/', (req, res) => {
         //validate submission
-        req.assert('name', 'Name is required.').notEmpty();
+        req.assert('name', 'A name is required.').notEmpty();
         req.assert('email', 'A valid email is required.').isEmail();
         
         var errors = req.validationErrors();
