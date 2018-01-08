@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--
-
-make into a partial?
--->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' data: fonts.gstatic.com">
@@ -16,7 +12,12 @@ make into a partial?
 <body>
     <div class='main animated slideInLeft'>
         <div class='container'> <a href="/">Back Home</a>
-            <h1> <%= response %></h1>  
+            <h1> <%= response %></h1>
+            <ul>
+            <% errors.forEach(function(errObj){ %>
+            <li><%= errObj.msg %> </li> 
+             <% } ) %>
+            </ul>  
         </div>
     </div>
 </body>

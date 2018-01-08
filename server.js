@@ -37,8 +37,8 @@ app.get('/confirm', (req, res) => {
 
     app.post('/confirm', (req, res) => {
         //validate submission
-        req.assert('name', 'Name is required. Please try again.').notEmpty();
-        req.assert('email', 'A valid email is required. Please try again.').isEmail();
+        req.assert('name', 'Name is required.').notEmpty();
+        req.assert('email', 'A valid email is required.').isEmail();
         
         var errors = req.validationErrors();
         
@@ -46,7 +46,8 @@ app.get('/confirm', (req, res) => {
         
         if(errors){
             res.render('confirm.ejs',{
-                response: errors[1].msg,
+                errors: errors,
+                response: 'Error :(',
                 title: "Error"
             })
             return;
