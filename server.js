@@ -25,7 +25,7 @@ app.use(bodyParser.json())
 app.use(expressValidator());
 app.use(express.static(path.join(__dirname, 'public')))
     //home route
-app.get('/home', (req, res) => {
+app.get('/h', (req, res) => {
         res.sendFile(__dirname + '/public/index.html')
     })
     //confirm routes
