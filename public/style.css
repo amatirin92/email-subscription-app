@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Barlow');
-
 body {
-    font-family: 'Barlow', sans-serif;
     background-image: url(pic01.jpg);
     background-size: cover;
 }
