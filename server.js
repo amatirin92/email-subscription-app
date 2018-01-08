@@ -45,7 +45,7 @@ app.get('/confirm', (req, res) => {
         console.log(errors)
         
         if(errors){
-            res.render('confirm.ejs',{
+            res.render('error.ejs',{
                 errors: errors,
                 response: 'Error :(',
                 title: "Error"

@@ -12,7 +12,12 @@
 <body>
     <div class='main animated slideInLeft'>
         <div class='container'> <a href="/">Back Home</a>
-            <h1> <%= response %></h1> 
+            <h1> <%= response %></h1>
+            <ul>
+            <% errors.forEach(function(errObj){ %>
+            <li><%= errObj.msg %> </li> 
+             <% } ) %>
+            </ul>  
         </div>
     </div>
 </body>

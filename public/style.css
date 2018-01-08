@@ -37,3 +37,7 @@ td {
 tr:nth-child(even) {
     background-color: white;
 }
+
+ul {
+    list-style: none;
+}
