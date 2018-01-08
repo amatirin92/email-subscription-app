@@ -25,7 +25,7 @@ app.use(bodyParser.json())
 app.use(expressValidator());
 app.use(express.static(path.join(__dirname, 'public')))
     //home route
-app.get('/h', (req, res) => {
+app.get('/', (req, res) => {
         res.sendFile(__dirname + '/public/index.html')
     })
     //confirm routes
@@ -35,7 +35,7 @@ app.get('/confirm', (req, res) => {
         , response: "Confirmation page"
     });
 
-    app.post('/confirm', (req, res) => {
+    app.post('/confirm/', (req, res) => {
         //validate submission
         req.assert('name', 'Name is required.').notEmpty();
         req.assert('email', 'A valid email is required.').isEmail();
