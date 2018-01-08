@@ -274,7 +274,7 @@ camelcase@^4.0.0:
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/capture-stack-trace/-/capture-stack-trace-1.0.0.tgz#4a6fa07399c26bba47f0b2496b4d0fb408c5550d"
+  resolved "http://registry.npmjs.org/capture-stack-trace/-/capture-stack-trace-1.0.0.tgz#4a6fa07399c26bba47f0b2496b4d0fb408c5550d"
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -372,7 +372,7 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
 
 create-error-class@^3.0.0:
   version "3.0.2"
-  resolved "https://registry.yarnpkg.com/create-error-class/-/create-error-class-3.0.2.tgz#06be7abef947a3f14a30fd610671d401bca8b7b6"
+  resolved "http://registry.npmjs.org/create-error-class/-/create-error-class-3.0.2.tgz#06be7abef947a3f14a30fd610671d401bca8b7b6"
   dependencies:
     capture-stack-trace "^1.0.0"
 
@@ -1237,31 +1237,31 @@ moment@^2.10.6:
   version "2.20.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.20.1.tgz#d6eb1a46cbcc14a2b2f9434112c1ff8907f313fd"
 
-mongodb-core@2.1.17:
-  version "2.1.17"
-  resolved "https://registry.yarnpkg.com/mongodb-core/-/mongodb-core-2.1.17.tgz#a418b337a14a14990fb510b923dee6a813173df8"
+mongodb-core@2.1.18:
+  version "2.1.18"
+  resolved "https://registry.yarnpkg.com/mongodb-core/-/mongodb-core-2.1.18.tgz#4c46139bdf3a1f032ded91db49f38eec01659050"
   dependencies:
     bson "~1.0.4"
     require_optional "~1.0.0"
 
-mongodb@2.2.33, mongodb@^2.2.33:
-  version "2.2.33"
-  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-2.2.33.tgz#b537c471d34a6651b48f36fdbf29750340e08b50"
+mongodb@2.2.34, mongodb@^2.2.33:
+  version "2.2.34"
+  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-2.2.34.tgz#a34f59bbeb61754aec432de72c3fe21526a44c1a"
   dependencies:
     es6-promise "3.2.1"
-    mongodb-core "2.1.17"
+    mongodb-core "2.1.18"
     readable-stream "2.2.7"
 
 mongoose@^4.13.7:
-  version "4.13.7"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.13.7.tgz#f760c770e6c8cdf34a6fe8b7443882b5fced1032"
+  version "4.13.9"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.13.9.tgz#ca4d99aed6e36e87854c2295387e7ea17966cfe3"
   dependencies:
     async "2.1.4"
     bson "~1.0.4"
     hooks-fixed "2.0.2"
     kareem "1.5.0"
     lodash.get "4.4.2"
-    mongodb "2.2.33"
+    mongodb "2.2.34"
     mpath "0.3.0"
     mpromise "0.5.5"
     mquery "2.3.3"
@@ -1331,8 +1331,8 @@ node-validator@^0.1.27:
     moment "^2.10.6"
 
 nodemon@^1.12.7:
-  version "1.14.3"
-  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.14.3.tgz#f08d66726fb9876d76956b57cc91624793de4dbb"
+  version "1.14.8"
+  resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.14.8.tgz#0cc906035e2d4bf771d5f40fb5d8e37fb3e673e7"
   dependencies:
     chokidar "^1.7.0"
     debug "^2.6.8"
