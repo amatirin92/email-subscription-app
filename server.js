@@ -5,8 +5,8 @@ const path = require('path');
 const expressValidator = require('express-validator');
 const config = require('./config.js')
 const mailgun = require('mailgun-js')({
-    apiKey: config.api_key,
-    domain: config.domain
+    apiKey: config.api_key
+    , domain: config.domain
 });
 const MongoClient = require('mongodb').MongoClient
 var db;
@@ -34,26 +34,20 @@ app.get('/confirm', (req, res) => {
         title: "Confirm"
         , response: "Confirmation page"
     });
-
-    app.post('/confirm', (req, res) => {
-        //validate submission
-        req.assert('name', 'A name is required.').notEmpty();
-        req.assert('email', 'A valid email is required.').isEmail();
-        
-        var errors = req.validationErrors();
-        
-        console.log(errors)
-        
-        if(errors){
-            res.render('error.ejs',{
-                errors: errors,
-                response: 'Error :(',
-                title: "Error"
-            })
-            return;
-        } 
-        
-  //send message to user
+app.post('/confirm', (req, res) => {
+            //validate submission
+            req.assert('name', 'A name is required.').notEmpty();
+            req.assert('email', 'A valid email is required.').isEmail();
+            var errors = req.validationErrors();
+            if (errors) {
+                res.render('error.ejs', {
+                    errors: errors
+                    , response: 'Error :('
+                    , title: "Error"
+                })
+                return;
+            }
+            //send message to user
             var user = req.body;
             user.subscribed = false;
             //create the token
@@ -68,10 +62,10 @@ app.get('/confirm', (req, res) => {
             var confirmUrl = 'http://the-email-subscription-app.herokuapp.com/confirm/' + usertoken;
             //message
             var data = {
-                from: 'Admin <admin@amatirin.me>',
-                to: user.email,
-                subject: 'Please confirm',
-                text: 'Thanks for signing up with us! :) Please confirm your subscription here!  ' + confirmUrl
+                from: 'Admin <admin@amatirin.me>'
+                , to: user.email
+                , subject: 'Please confirm'
+                , text: 'Thanks for signing up with us! :) Please confirm your subscription here!  ' + confirmUrl
             };
             mailgun.messages().send(data, function (error, body) {});
             //save user to database + send message
@@ -83,7 +77,6 @@ app.get('/confirm', (req, res) => {
                 })
             });
         })
-    
         //subscribers route
     app.get('/subscribers', (req, res) => {
             db.collection('subscribers').find().toArray((err, result) => {
@@ -96,6 +89,7 @@ app.get('/confirm', (req, res) => {
         })
         //verify routes
     app.get('/confirm/:token', (req, res) => {
+        //check for existence of token
         db.collection('subscribers').findOne({
             token: req.params.token
         }, {
