@@ -27,13 +27,14 @@ app.use(express.static(path.join(__dirname, 'public')))
     //home route
 app.get('/', (req, res) => {
         res.sendFile(__dirname + '/public/index.html')
-    })
+    });
     //confirm routes
 app.get('/confirm', (req, res) => {
     res.render('confirm.ejs', {
         title: "Confirm"
         , response: "Confirmation page"
-    });
+    })
+});
 app.post('/confirm', (req, res) => {
             //validate submission
             req.assert('name', 'A name is required.').notEmpty();
@@ -76,7 +77,7 @@ app.post('/confirm', (req, res) => {
                     , title: "Confirmation"
                 })
             });
-        })
+        });
         //subscribers route
     app.get('/subscribers', (req, res) => {
             db.collection('subscribers').find().toArray((err, result) => {
@@ -86,7 +87,7 @@ app.post('/confirm', (req, res) => {
                     , title: "List"
                 })
             })
-        })
+        });
         //verify routes
     app.get('/confirm/:token', (req, res) => {
         //check for existence of token
@@ -117,5 +118,4 @@ app.post('/confirm', (req, res) => {
                 })
             }
         })
-    })
-});
+    });

@@ -1,18 +1,15 @@
 {
-  "name": "subscription-app",
+  "name": "email-subscription-app",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "dependencies": {
-    "better-validator": "^2.1.7",
     "body-parser": "^1.18.2",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "express-validator": "^4.3.0",
     "mailgun-js": "^0.13.1",
-    "mongodb": "^2.2.33",
-    "mongoose": "^4.13.7",
-    "node-validator": "^0.1.27"
+    "mongodb": "^2.2.33"
   },
   "devDependencies": {
     "nodemon": "^1.12.7"
