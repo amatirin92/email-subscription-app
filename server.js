@@ -48,7 +48,7 @@ app.post('/confirm', (req, res) => {
                 })
                 return;
             }
-            //send message to user
+            //create user
             var user = req.body;
             user.subscribed = false;
             //create the token
