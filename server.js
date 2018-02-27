@@ -3,10 +3,10 @@ const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
 const expressValidator = require('express-validator');
-const config = require('./config.js')
+const dotenv = require('dotenv').config();
 const mailgun = require('mailgun-js')({
-    apiKey: config.api_key
-    , domain: config.domain
+    apiKey: process.env.api_key
+    , domain: process.env.domain
 });
 const MongoClient = require('mongodb').MongoClient
 var db;
