@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' data: fonts.gstatic.com">
-    
-    <title>Email Subscription App | <%= title %> </title>
+    <meta charset="UTF-8" http-equiv="Content-Security-Policy">
+
+    <title>Email Subscription App |
+        <%= title %>
+    </title>
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="stylesheet" href="animate.css">
-    <link rel="stylesheet" href="/style.css"> 
+    <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
-    <div class='main animated slideInLeft'>
+    <!-- <div class='main animated slideInLeft'>
         <div class='container'> <a href="/">Back Home</a>
             <h1> <%= response %></h1>
             <ul>
@@ -18,7 +22,29 @@
              <% } ) %>
             </ul>  
         </div>
+    </div> -->
+
+    <div class='animated slideInLeft container' style="width:50%;height:100%">
+        <div class="card small">
+            <div class="card-content center-align">
+                <h2 class="card-title black-text center-align">
+                    <%= response %> </h2>
+                <div class="row">
+                    <div class="col s6 offset-s3">
+                        <ul class="collection">
+                            <% errors.forEach(function(errObj){ %>
+                            <li class="collection-item">
+                                <i class="material-icons right" style="color: red">error</i>
+                                <%= errObj.msg %>
+                            </li>
+                            <% } ) %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 </body>
 
 </html>
