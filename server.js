@@ -5,12 +5,12 @@ const path = require('path');
 const expressValidator = require('express-validator');
 const dotenv = require('dotenv').config();
 const mailgun = require('mailgun-js')({
-    apiKey: process.env.api_key
-    , domain: process.env.domain
+    apiKey: process.env.MAILGUN_API_KEY
+    , domain: process.env.MAILGUN_DOMAIN
 });
 const MongoClient = require('mongodb').MongoClient
 var db;
-MongoClient.connect('mongodb://amatirin:ayami92@ds135946.mlab.com:35946/subscription-app', (err, database) => {
+MongoClient.connect(process.env.MONGODB_URI, (err, database) => {
     if (err) return console.log(err)
     db = database;
     app.listen(process.env.PORT || 3000, () => {
